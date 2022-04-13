@@ -1,0 +1,16 @@
+{
+  "name": "auto-mow",
+  "author": "PhasecoreX",
+  "displayName": "AutoMow",
+  "version": "1.0.0",
+  "license": "GPL-3.0",
+  "source": "src/index.ts",
+  "main": "dist/auto-mow.js",
+  "scripts": {
+    "build": "microbundle build --strict --format cjs --sourcemap false --generateTypes false",
+    "watch": "microbundle watch --strict --format cjs --sourcemap false --generateTypes false"
+  },
+  "devDependencies": {
+    "microbundle": "^0.14.0"
+  }
+}
