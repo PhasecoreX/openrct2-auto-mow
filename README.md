@@ -1,5 +1,5 @@
 # openrct2-auto-mow
-Automatically keep the grass in OpenRCT2 at a specific length
+Automatically keep all the grass in OpenRCT2 at a specific length
 
 ## How?
 The user chooses what kind of grass they want, by default this is clear (no weeds, but not mowed, contrary to the name of this plugin). Then every tick, at least one tile is checked if it needs to be set to that length. If it is determined that the tile will soon grow weeds (or in the case of mowed grass, will soon become clear), then it is modified to the designated length of grass chosen in the settings.
@@ -15,9 +15,7 @@ If you want mowed grass, every 2 months the grass will be set to mowed. But if y
 Also, if you're wondering why we don't just scan everything and update all the tiles every day instead of scanning per tick: massive lag.
 
 ## Multiplayer?
-Yes! But actually no...
-
-The plugin does work in multiplayer just fine, however if a client desyncs and then reconnects, or if the host loads a new save file, the plugin will not reload in the client and then no grass will be mowed for them. This leads to a desync very quickly. If they quit to main menu and then rejoin the server, the plugin loads fine for them. Understandably, this is annoying to deal with. I have opened an issue [here](https://github.com/OpenRCT2/OpenRCT2/issues/14009) to fix this.
+Yes! As of OpenRCT2 v0.4.0, plugins with custom registered actions (which this plugin uses) are correctly handled on the client when they reconnect or the host loads a new save file.
 
 ## Alternatives?
 The best way of doing this is just to have an option in OpenRCT2 that displays all grass as clear/mowed. Maybe have it ignore grass ticking? However, that might alter game state.
